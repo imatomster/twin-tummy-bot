@@ -3,6 +3,7 @@ https://realpython.com/how-to-make-a-discord-bot-python/
 https://discord.com/developers
 https://github.com/Rapptz/discord.py
 https://discordpy.readthedocs.io/en/latest/ext/commands/api.html?highlight=ctx#context%60
+https://developer.riotgames.com/
 
 <b>Setting up Python and Virtual Environment</b>
 Install Python and linter for python and venv
