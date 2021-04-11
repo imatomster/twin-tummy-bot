@@ -10,7 +10,7 @@ from riotwatcher import LolWatcher, ApiError
 watcher = LolWatcher(TOKEN_RIOTWATCHER)
 
 # Custom Bot Constructor for my Discord Bot
-class DrinkEatFart(commands.Bot):
+class twin_tummy(commands.Bot):
     def __init__(self):
         super().__init__(command_prefix='/')
 
@@ -20,7 +20,7 @@ class DrinkEatFart(commands.Bot):
         # print('self', dir(self))
 
 # Instancing a Bot
-bot_instance = DrinkEatFart()
+bot_instance = twin_tummy()
 
 # All Commands
 @bot_instance.command(aliases=['TEST', 'TESTER'], help="I am just here to tell you if bot is working")
@@ -39,8 +39,9 @@ async def opgg(ctx, *, input):
     try:
         # Testing if summoner exists
         user = watcher.summoner.by_name('na1', input)
-    except ApiError as err:
+    except ApiError as errorVariable:
         # If it doesn't > ApiError 404 and we can respond
+        print(errorVariable)
         await ctx.send(f'Are you sure {input} exists on the rift?')
     else:
         # Create User and Check Stats
@@ -60,8 +61,6 @@ async def opgg(ctx, *, input):
             summonerName = user['name']
             userLink = summonerName.replace(' ', '')
             await ctx.send(f'It seems that {summonerName} does not have a rank!\nFor more info: https://na.op.gg/summoner/userName={userLink}')
-
-        
 
 # Execute Instance
 bot_instance.run(TOKEN_DISCORD)
