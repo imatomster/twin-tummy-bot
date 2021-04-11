@@ -17,7 +17,7 @@ class twin_tummy(commands.Bot):
     async def on_ready(self):
         # on launch > tell console that I launched
         print('Online as', self.user)
-        # print('self', dir(self))
+        # print('self', dir(self)) to see all commands
 
 # Instancing a Bot
 bot_instance = twin_tummy()
