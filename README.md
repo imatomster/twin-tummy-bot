@@ -1,4 +1,4 @@
-# drinkeatfart-discord-bot
+# Twin Tummy Discord Bot
 https://realpython.com/how-to-make-a-discord-bot-python/ 
 https://discord.com/developers
 https://github.com/Rapptz/discord.py

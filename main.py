@@ -32,6 +32,7 @@ async def hello(ctx):
     await ctx.trigger_typing()
     await ctx.reply('Hey bro')
 
+# Aliases not working
 @bot_instance.command(aliases=['mmr, MMR, league, OP.GG, OPGG, op.gg'], help="League Summoner Search")
 async def opgg(ctx, *, input):
     await ctx.trigger_typing()
