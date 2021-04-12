@@ -5,14 +5,16 @@ from secret import TOKEN_DISCORD, TOKEN_RIOTWATCHER
 from discord.ext import commands
 # Import riotwatcher
 from riotwatcher import LolWatcher, ApiError
-
 # Setting up LolWatcher (need to refresh every 24 hours)
 watcher = LolWatcher(TOKEN_RIOTWATCHER)
+
+# Import requests to get something from fox website
+import requests
 
 # Custom Bot Constructor for my Discord Bot
 class twin_tummy(commands.Bot):
     def __init__(self):
-        super().__init__(command_prefix='/')
+        super().__init__(command_prefix='$')
 
     async def on_ready(self):
         # on launch > tell console that I launched
@@ -31,6 +33,12 @@ async def test(ctx):
 async def hello(ctx):
     await ctx.trigger_typing()
     await ctx.reply('Hey bro')
+
+@bot_instance.command(aliases=['trollSteben', 'steben', 'steven','FOX'], help="Did someone say steben?")
+async def fox(ctx):
+    picture = requests.get('http://randomfox.ca/floof').json()['image']
+    discord_id = '<@383129219326017569>'
+    await ctx.send(f'{discord_id}\n{picture}')    
 
 @bot_instance.command(aliases=['mmr', 'MMR', 'league', 'OP.GG', 'OPGG', 'op.gg'], help="League Summoner Search")
 async def opgg(ctx, *, input):
