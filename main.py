@@ -1,6 +1,6 @@
 # Importing my security tokens to use the following APIS
 from secret import TOKEN_DISCORD, TOKEN_RIOTWATCHER
-
+import os
 # Import discord and then the specific commands from extra discord
 import discord
 from discord.ext import commands
