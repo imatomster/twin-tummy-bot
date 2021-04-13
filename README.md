@@ -36,7 +36,14 @@ pip install -r requirements.txt = for when you need to install everything
 If renamed repo > delete venv > reinstall  
 Go to the hidden file .git > config > update url for github  
 
-## Bot Features
+<b>Shortcuts</b>  
+Alt + Shift + F = Auto Format with autopep8  
+
+<b>Misc</b>  
+Python Classes Constructors have __init__ as constructor
+Python Classes need self as parameter
+
+## Bot Features  
 <b> League of Legends API </b>  
 /opgg
 
