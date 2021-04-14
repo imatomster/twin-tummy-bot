@@ -8,6 +8,8 @@ https://github.com/Rapptz/discord.py   <br />
 https://discordpy.readthedocs.io/en/latest/ext/commands/api.html?highlight=ctx#context%60 <br />
 https://developer.riotgames.com/ <br />
 https://www.youtube.com/watch?v=vQw8cFfZPx0&list=RDCMUCR-zOCvDCayyYy1flR5qaAg&index=7  <br />
+https://github.com/pseudonym117/Riot-Watcher  <br />
+https://riot-watcher.readthedocs.io/en/latest/ <br />
 
 ## Setting up Virtual Enviornment and Modules
 <b>Setting up Python and Virtual Environment</b>  

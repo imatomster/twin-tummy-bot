@@ -27,7 +27,7 @@ bot_instance = twin_tummy()
 @bot_instance.event
 async def on_ready():
     """On ready to set status message"""
-    print('Online as', bot_instance.user)
+    print(f'Online as {bot_instance.user}')
     await bot_instance.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Tommy from his room'))
 
 
