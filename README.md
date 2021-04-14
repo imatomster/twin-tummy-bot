@@ -26,18 +26,18 @@ pip install python-dotenv
 .env is a file where I can add tokens in the following format:  
 name=token (no spaces)  
 
-<b>.gitignore Edits</b> 
+<b>.gitignore Edits</b>  
 Add .vscode, venv/, .env  
 Needed to make sure these files don't get uploaded to github  
 
-<b>Installing Modules</b>
-py -m pip install -U discord.py = installing discord for example  
+<b>Installing Modules</b>   
+py -m pip install -U discord.py = installing discord for example   
 
 pip freeze = tells you what you have installed  
 pip freeze > requirements.txt = copies over the required modules needed  
 pip install -r requirements.txt = for when you need to install everything  
 
-<b>Mistakes and Fixes</b>
+<b>Mistakes and Fixes</b>  
 If renamed repo > delete venv > reinstall  
 Go to the hidden file .git > config > update url for github  
 
@@ -45,7 +45,7 @@ Go to the hidden file .git > config > update url for github
 Alt + Shift + F = Auto Format with autopep8  
 
 <b>Misc</b>  
-Python Classes Constructors have __init__ as constructor  
+Python Classes Constructors have __ init __ as constructor  
 Python Classes need self as parameter  
 """ Function Comment """ inside the function
 
