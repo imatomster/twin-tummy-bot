@@ -77,8 +77,9 @@ class RiotWatcher(commands.Cog, name='League of Legends Commands'):
                 user_link = summoner_name.replace(' ', '')
                 game_length = spectator['gameLength'] + 180
                 await ctx.send(f'"{summoner_name}" is {game_length//60} minutes & {game_length%60} seconds ingame right now!\nCheck them out here: https://na.op.gg/summoner/userName={user_link}')
-                print(spectator)
-                
+
+                for key, value in spectator.items():
+                    print(f'{key}: {value}')
 
     @tasks.loop(seconds=10, count=1)
     async def check_match(self):
