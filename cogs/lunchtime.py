@@ -5,7 +5,7 @@ import requests
 import random
 
 
-class LunchTime(commands.Cog):
+class LunchTime(commands.Cog, name='Lunch Time Commands'):
     """Constructor for the cog"""
 
     def __init__(self, bot_instance):

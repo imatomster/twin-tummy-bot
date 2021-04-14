@@ -129,6 +129,5 @@ dmypy.json
 .pyre/
 
 # Discord Bot Token
-secret.py
 venv/
 .vscode/

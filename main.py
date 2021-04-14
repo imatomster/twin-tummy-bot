@@ -1,10 +1,12 @@
-# Importing my security tokens to use the following APIS
-from secret import TOKEN_DISCORD
 # Import OS to refer to filename
 import os
 # Import discord to run the bot
 import discord
 from discord.ext import commands
+# Importing Discord Token from .env File
+from dotenv import load_dotenv
+load_dotenv()
+TOKEN_DISCORD = os.getenv('TOKEN_DISCORD')
 
 
 class twin_tummy(commands.Bot):

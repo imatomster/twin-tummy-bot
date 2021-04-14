@@ -1,22 +1,21 @@
+from riotwatcher import LolWatcher, ApiError
 import discord
 from discord.ext import commands
-# Importing my security tokens to use the following APIS
-from ..secret import TOKEN_RIOTWATCHER
+# Importing Riotwatcher Token from .env File
+import os
+from dotenv import load_dotenv
+load_dotenv()
+TOKEN_RIOTWATCHER = os.getenv('TOKEN_RIOTWATCHER')
 
-# Import riotwatcher
-from riotwatcher import LolWatcher, ApiError
 # Setting up LolWatcher (need to refresh every 24 hours)
 watcher = LolWatcher(TOKEN_RIOTWATCHER)
 
-class Riotwatcher(commands.Cog):
+
+class RiotWatcher(commands.Cog, name='League of Legends Commands'):
     """Constructor for the cog"""
 
     def __init__(self, bot_instance):
         self.bot_instance = bot_instance
-
-    @commands.command(aliases=['TEST', 'TESTER'], help="I am just here to tell you if bot is working")
-    async def test(self, ctx):
-        await ctx.send('Hey there! Yes, I am working')
 
     @commands.command(aliases=['mmr', 'MMR', 'league', 'OP.GG', 'OPGG', 'op.gg'], help="League Summoner Search")
     async def opgg(self, ctx, *, input):
@@ -35,7 +34,7 @@ class Riotwatcher(commands.Cog):
             stats = watcher.league.by_summoner('na1', user['id'])
 
             # Check if they have enough information for stats
-            if len(stats) > 0: # The stats array will be empty if not enough games
+            if len(stats) > 0:  # The stats array will be empty if not enough games
                 stats = stats[0]
                 summonerName = stats['summonerName']
                 tier = stats['tier']
@@ -48,6 +47,7 @@ class Riotwatcher(commands.Cog):
                 userLink = summonerName.replace(' ', '')
                 await ctx.send(f'It seems that {summonerName} does not have a rank!\nFor more info: https://na.op.gg/summoner/userName={userLink}')
 
+
 def setup(bot_instance):
     """Adds Cog to Bot"""
-    bot_instance.add_cog(Riotwatcher(bot_instance))
+    bot_instance.add_cog(RiotWatcher(bot_instance))

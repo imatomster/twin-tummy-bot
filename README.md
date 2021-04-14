@@ -9,7 +9,7 @@ https://discordpy.readthedocs.io/en/latest/ext/commands/api.html?highlight=ctx#c
 https://developer.riotgames.com/ <br />
 https://www.youtube.com/watch?v=vQw8cFfZPx0&list=RDCMUCR-zOCvDCayyYy1flR5qaAg&index=7  <br />
 
-## Setting up Virtual Enviornment and modules
+## Setting up Virtual Enviornment and Modules
 <b>Setting up Python and Virtual Environment</b>  
 Install Python online  
 Linter for Python on Vscode  
@@ -21,9 +21,14 @@ Run vscode as administrator if needed
 .vscode is vscode using the environment  
 .venv is the folder to hold all the packages  
 
-<b>.gitignore Edits</b>  
-Add token python file, .vscode, venv/  
-Needed to make sure these files don't get uploaded to github
+<b>Storing Tokens</b>  
+pip install python-dotenv  
+.env is a file where I can add tokens in the following format:  
+name=token (no spaces)  
+
+<b>.gitignore Edits</b> 
+Add .vscode, venv/, .env  
+Needed to make sure these files don't get uploaded to github  
 
 <b>Installing Modules</b>
 py -m pip install -U discord.py = installing discord for example  
@@ -40,8 +45,9 @@ Go to the hidden file .git > config > update url for github
 Alt + Shift + F = Auto Format with autopep8  
 
 <b>Misc</b>  
-Python Classes Constructors have __init__ as constructor
-Python Classes need self as parameter
+Python Classes Constructors have __init__ as constructor  
+Python Classes need self as parameter  
+""" Function Comment """ inside the function
 
 ## Bot Features  
 <b> League of Legends API </b>  
