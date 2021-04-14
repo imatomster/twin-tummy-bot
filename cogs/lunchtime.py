@@ -43,26 +43,26 @@ class LunchTime(commands.Cog, name='Lunch Time Commands'):
 
     @commands.command(aliases=['8ball', 'ASK', 'question'], help='I can predict the future')
     async def ask(self, ctx, *, question):
-        responses = ['It is certain :eyes:.',
-                     'It is decidedly so :eyes:.',
-                     'Without a doubt :eyes:.',
-                     'Yes - definitely :eyes:',
-                     'You may rely on it :eyes:',
-                     'As I see it, yes :eyes:.',
-                     'Most likely :eyes:',
-                     'Outlook good :eyes:.',
-                     'Yes.',
-                     'Signs point to yes.',
-                     'Reply hazy, try again.',
-                     'Ask again later.',
-                     'Better not tell you now.',
-                     'Cannot predict now',
-                     'Concentrate and ask again.',
-                     "Don't count on it.",
-                     'My reply is no.',
-                     'My sources say no.',
-                     'Outlook not so good.',
-                     'Very doubtful.']
+        responses = ['Michael says yes :turtle:',
+                     'Ethan decides yes :eyes:',
+                     'Curtis has no doubts :coconut:',
+                     'Courtney says definitely yes :rocket:',
+                     'As Tummy sees it, yes :eye: :lips: :eye:',
+                     'If a girl asked this then Fernando says yes  :eyes:',
+
+                     'Gohnshein shakes his head in disapproval:airplane:',
+                     'Chicken says no :chicken:',
+                     'Isa no for me :deciduous_tree:',
+                     'My next line is\nNO :custard:',
+                     'Cap thinks outlook bad :kaaba:  ',
+                     'Owen says no like the negative pers... ok ok sorry I was joking :eyes:',
+
+                     'No hablo ingles, por favor espanol :eye: :lips: :eye:',
+                     'That question is wayyy too hard :eye: :lips: :eye:',
+                     'One second, Tommy is pooping :eyes:',
+                     'Chicken does not want to talk right now :chicken:',
+                     'Tummy is very doubtful :eye: :lips: :eye:',
+                     'I think Tommy has the answers :face_with_raised_eyebrow:']
         await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
 
 
