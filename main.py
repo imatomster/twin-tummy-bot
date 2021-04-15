@@ -1,5 +1,5 @@
 # Import OS to refer to filename
-import os
+import os, platform
 # Import discord to run the bot
 import discord
 from discord.ext import commands
@@ -28,6 +28,9 @@ bot_instance = twin_tummy()
 async def on_ready():
     """On ready to set status message"""
     print(f'Online as {bot_instance.user}')
+    print(f'Discord.py API version: {discord.__version__}')
+    print(f'Python version: {platform.python_version()}')
+    print(f'Running on: {platform.system()} {platform.release()} ({os.name})')
     await bot_instance.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Tommy from his room'))
 
 
@@ -46,7 +49,10 @@ async def unload(ctx, extension):
 for file in os.listdir('./cogs'):
     if file.endswith('.py'):
         # file[:-3] shaves off .py or the last 3 characters
-        bot_instance.load_extension(f'cogs.{file[:-3]}')
+        if(not file.endswith('meganwatcher.py')):
+            bot_instance.load_extension(f'cogs.{file[:-3]}')
+
+
 
 # Execute Instance
 bot_instance.run(TOKEN_DISCORD)

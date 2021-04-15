@@ -16,8 +16,6 @@ class RiotWatcher(commands.Cog, name='League of Legends Commands'):
 
     def __init__(self, bot_instance):
         self.bot_instance = bot_instance
-        # Start the Background Task Checkers
-        self.check_match.start()
 
     @commands.command(aliases=['mmr', 'MMR', 'league', 'OP.GG', 'OPGG', 'op.gg'], help="Search someone's op.gg or rank")
     async def opgg(self, ctx, *, input):
@@ -80,22 +78,6 @@ class RiotWatcher(commands.Cog, name='League of Legends Commands'):
 
                 for key, value in spectator.items():
                     print(f'{key}: {value}')
-
-    @tasks.loop(seconds=10, count=1)
-    async def check_match(self):
-        """Background Task"""
-        print("hi")
-
-    @check_match.before_loop
-    async def before_check_match(self):
-        """Not Running Task until bot_instance is loaded"""
-        print('Waiting before looping...')
-        await self.bot_instance.wait_until_ready()
-
-    @check_match.after_loop
-    async def after_check_match(self):
-        """Declaring that Loop is done"""
-        print('Done!')
 
 
 def setup(bot_instance):
