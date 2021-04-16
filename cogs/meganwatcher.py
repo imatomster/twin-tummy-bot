@@ -20,13 +20,13 @@ class MeganWatcher(commands.Cog, name='League of Legends Commands'):
         self.check_megan.start()
         self.game_id = 0
 
-    @tasks.loop(minutes=10)
+    @tasks.loop(minutes=5)
     async def check_megan(self):
         """Background Task"""
         channel = self.bot_instance.get_channel(791495496266022922)
         discord_id = '<@754199681415905331>'
         cousin = ['TechnoCrest', 'nindragon',
-                  'Dansing Queen', 'AsianPanCakes', '32oz']
+                  'Dansing Qween', 'AsianPanCakes', '32oz']
 
         user = watcher.summoner.by_name('na1', 'DurianLuver')
         summoner_name = user['name']
@@ -52,7 +52,8 @@ class MeganWatcher(commands.Cog, name='League of Legends Commands'):
                 if(len(cousin) > 1):
                     comma_names = '\n'
                     for i in range(len(cousin)):
-                        comma_names = comma_names + f':rage: {cousin[i]} :rage:\n'
+                        comma_names = comma_names + \
+                            f':rage: {cousin[i]} :rage:\n'
                     await channel.send(f'**WHY IS {discord_id} IN GAME RIGHT NOW WITHOUT:**\n{comma_names}\n**Surrender now and invite us...**\n*Or compensate at: https://venmo.com/twin-tummy-bot*')
                     print(f'{summoner_name} is in game: {current_game_id}')
 
@@ -61,7 +62,7 @@ class MeganWatcher(commands.Cog, name='League of Legends Commands'):
                     f'{summoner_name} is still in the same game: {current_game_id}')
 
     @commands.command()
-    async def cancel(self, ctx):
+    async def cancel(self):
         self.check_megan.stop()
 
     @check_megan.before_loop

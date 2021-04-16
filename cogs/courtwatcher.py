@@ -10,6 +10,7 @@ TOKEN_RIOTWATCHER = os.getenv('TOKEN_RIOTWATCHER')
 # Setting up LolWatcher (need to refresh every 24 hours)
 watcher = ValWatcher(TOKEN_RIOTWATCHER)
 
+
 class CourtWatcher(commands.Cog, name='League of Legends Commands'):
     """Constructor for the cog"""
 
@@ -25,7 +26,7 @@ class CourtWatcher(commands.Cog, name='League of Legends Commands'):
         channel = self.bot_instance.get_channel(829521074907643967)
         # discord_id = '<@754199681415905331>'
         # cousin = ['TechnoCrest', 'nindragon',
-        #           'Dansing Queen', 'AsianPanCakes', '32oz']
+        #           'Dansing Qween', 'AsianPanCakes', '32oz']
 
         print('loop')
         match = watcher.match.recent_matches('na1', 'ranked')
