@@ -1,5 +1,6 @@
 # Import OS to refer to filename
-import os, platform
+import os
+import platform
 # Import discord to run the bot
 import discord
 from discord.ext import commands
@@ -49,9 +50,8 @@ async def unload(ctx, extension):
 for file in os.listdir('./cogs'):
     if file.endswith('.py'):
         # file[:-3] shaves off .py or the last 3 characters
-        if(not file.endswith('meganwatcher.py')):
+        if(not file.endswith('meganwatcher.py') and not file.endswith('courtwatcher.py')):
             bot_instance.load_extension(f'cogs.{file[:-3]}')
-
 
 
 # Execute Instance
